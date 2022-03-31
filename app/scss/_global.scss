@@ -131,14 +131,14 @@ footer{
 .forms{
     position: fixed;
     transform: translateX(-200%);
+    min-width: 100%;
+    min-height: 100vh;
 }
 
 .forms.forms-active{
     z-index: 1001;  
     transform: translateX(0);
     transition: all .5s;
-    min-width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,8 +213,8 @@ footer{
     }
     &__link{
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 20px;
+        right: 25px;
         width: 22px;
         height: 22px;
         border: none;

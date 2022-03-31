@@ -468,7 +468,7 @@
             line-height: 21px;
         }
         &::before{
-            content: ''counter(my-counter);
+            content: counter(my-counter);
             position: absolute;
             width: 27px;
             height: 27px;
@@ -618,6 +618,7 @@
 .slick-prev,
 .slick-next{
     position: absolute;
+    cursor: pointer;
     z-index: 1001;
     width: 62px;
     height: 62px;

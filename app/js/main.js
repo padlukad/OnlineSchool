@@ -1,10 +1,13 @@
 $(function() {
 
     $('.sign-link').on('click', function(){
-        $('.forms').toggleClass('forms-active');
+        $('.forms').addClass('forms-active');
     });
 
     $('.form__link').on('click', function(){
+        $('.forms').removeClass('forms-active');
+    });
+    $('.form').submit(function(){
         $('.forms').removeClass('forms-active');
     });
 
