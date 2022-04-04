@@ -1,7 +1,165 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
+
+
+
+
+.forms{
+    position: fixed;
+    transform: translateX(-200%);
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.forms.forms-active{
+    z-index: 1001;  
+    transform: translateX(0);
+    transition: all .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    &__wrapper{
+        width: 100%;
+        height: 100%;
+        padding: 10px;       
+    }
+}
+
+.form{
+    position: relative;
+    max-width: 600px;
+    max-height: 680px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 33px 28px 44px 28px;
+    background: linear-gradient(286.41deg, #033958 3.63%, #0F6B78 90.98%);
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.53);
+    border-radius: 20px;
+    .title{
+        font-size: 22px;
+        line-height: 27px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    label{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: 0.1em;
+        color: $accent;
+        min-width: 100%;
+    }
+    &__input-wrapper{
+        width: 100%;
+        padding: 2px;
+        margin-top: 10px;
+        background-image: radial-gradient(47.54% 111.62% at 50% 50%, #49B9E8 0%, rgba(31, 77, 96, 0.43) 100%);
+        border-radius: 9px;
+    }
+    &__input{
+        background: linear-gradient(180deg, rgba(0, 224, 255, 0.11) 0%, rgba(0, 224, 255, 0.0539) 100%);
+        border-radius: 9px;
+        height: 56px;
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.1em;
+        color: #fff;
+        padding: 0 11px 0 20px;
+        &::placeholder{
+            font-size: 15px;
+            line-height: 18px;
+            letter-spacing: 0.1em;
+            color: #fff;
+        }
+    }
+    .jq-selectbox.jqselect.form__select{
+        width: 100%;
+    }
+    .jq-selectbox__select {
+        height: 56px;
+        padding: 0 11px 0 20px;
+        border: none;
+        border-radius: 9px;
+        background: linear-gradient(180deg, rgba(0, 224, 255, 0.11) 0%, rgba(0, 224, 255, 0.0539) 100%);
+        box-shadow: none;
+        font-size: 15px;
+        line-height: 18px;
+        color: #fff;
+        text-shadow: none;
+        display: flex;
+        align-items: center;
+    }
+    .jq-selectbox__trigger{
+        border: none;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 10px;
+            background-image: url('../images/icons/angel-down.svg');
+            top: 25px;
+            right: 5px;
+            transition: all .3s;
+        }
+    }
+    .jq-selectbox.jqselect.form__select.dropup.opened,
+    .jq-selectbox.jqselect.form__select.dropdown.opened{
+        .jq-selectbox__trigger::after{
+            transform: rotate(180deg);
+            transition: all .3s;
+        }
+    }
+    .jq-selectbox__trigger-arrow {
+        position: absolute;
+        top: 25px;
+        right: 12px;
+        width: 0;
+        height: 0;
+        border: none ;
+    }
+    .jq-selectbox__dropdown{
+        .sel.selected{
+            background-color: rgb(0, 224, 255);
+        }
+        li:hover{
+            background-color: rgb(0, 224, 255);
+        }
+    }
+    &__btn{
+        @extend %btn-one;
+        max-width: calc(680px - 33px - 28px);
+        width: 100%;
+        border: none;
+    }
+    &__link{
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        width: 22px;
+        height: 22px;
+        border: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 .header{
     background-image: url('../images/bg/header-bg.jpg');
@@ -445,10 +603,15 @@
         padding: 1px;
         background: linear-gradient(286.41deg, #073447 3.63%, #08262B 90.98%);
         border-radius: 6px;
+        svg{
+            transition: all 0.3s;
+        }
     }
     &__toggle-imgbox--active{
-        transition: all 0.4;
-        transform: rotate(180deg);
+        svg{
+            transition: all 0.3s;
+            transform: rotate(180deg);
+        }
     }
     &__list{
         counter-reset: my-counter;
@@ -639,5 +802,8 @@
     background: #08262B;
     opacity: 0.7;
 }
+
+
+
 
 @import 'media';
