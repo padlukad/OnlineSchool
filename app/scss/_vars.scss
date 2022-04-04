@@ -45,4 +45,10 @@ $accent: #4ABCEC;
     color: $accent;
     background-color: transparent;
     border: 1px solid #00E0FF;
+    transition: all .3s;
+    &:hover{
+        background: linear-gradient(180deg, rgba(3, 225, 255, 0.66) 0%, #13CDC2 100%);
+        color: #fff;
+        transition: all .3s;
+    }
 }

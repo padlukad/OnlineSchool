@@ -40,4 +40,6 @@ $(function() {
         slidesToScroll: 1,
         draggable: false
     });
+
+    $('.form__select').styler();
 });
