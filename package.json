@@ -24,6 +24,7 @@
   },
   "description": "",
   "dependencies": {
-    "jquery-form-styler": "^2.0.2"
+    "jquery-form-styler": "^2.0.2",
+    "jquery.maskedinput": "^1.4.1"
   }
 }
