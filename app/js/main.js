@@ -1,5 +1,14 @@
 $(function() {
 
+    $('.header__btn').on('click', function(){
+        $('.phone-box').addClass('phone-active');
+    });
+    $('.close-btn').on('click', function(){
+        $('.phone-box').removeClass('phone-active');
+    });
+
+    $(".phone-input").mask("+38 (099) 999 99 99");
+
     $('.sign-link').on('click', function(){
         $('.forms').addClass('forms-active');
     });
