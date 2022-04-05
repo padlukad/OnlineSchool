@@ -591,9 +591,8 @@
 
 .whywe{
     padding: 105px 0 110px;
-    background-image: url('../images/bg/whywe-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(286.41deg, #022335 3.63%, #043A41 90.98%);
+    position: relative;
     .title{
         margin-bottom: 40px;
     }
@@ -618,6 +617,15 @@
             top: -10px;
         }
     }
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url('../images/stars.png');
+        background-repeat: no-repeat;
+        background-size: 44%;
+        background-position: 104% 15%;
+    }
 }
 
 .courses{
@@ -633,7 +641,8 @@
 
 .course{
     &__toggle{
-        height: 60px;
+        padding: 10px 0;
+        min-height: 60px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -944,8 +953,20 @@
         }
     }
     .needtoknow{
+        &__content{
+            display: block;
+        }
+        &__content-text{
+            margin-top: 10px;
+        }
+        &__imgbox-wrapper{
+            margin: 0 auto;
+        }
+    }
+    .whywe{
         &__inner{
-            grid-template-columns: repeat(1, 1fr);
+            background-size: 50%;
+            background-position: 113% 35%;
         }
     }
 }
@@ -970,13 +991,26 @@
             grid-gap: 20px 20px;
         }
     }
-
+    .whywe{
+        &__inner{
+            display: block;
+            background-image: none;
+        }
+        &__imgbox{
+            margin-bottom: 15px;
+           img{
+                margin: 0 auto;
+           }
+        }
+    }
 }
 
 @media (max-width: 768px){
     .reasons,
     .intellect,
-    .needtoknow{
+    .needtoknow,
+    .whywe,
+    .courses{
         padding: 60px 0;
     }
     .title{
@@ -1023,7 +1057,9 @@
     }
     .reasons .title,
     .intellect .title,
-    .needtoknow .title {
+    .needtoknow .title,
+    .whywe .title,
+    .courses .title {
         margin-bottom: 25px;
     }
     .intellect{
@@ -1036,6 +1072,32 @@
         &__list{
             margin-bottom: 10px;
         }
+    }
+    .needtoknow{
+        &__inner{
+            grid-gap: 20px;
+        }
+        &__content{
+            max-width: 282px;
+            width: 100%;
+        }
+        &__content-text{
+            font-size: 14px;
+            line-height: 17px;
+        }
+        &__imgbox-wrapper{
+            max-width: 282px;
+            width: 100%;
+        }
+        &__content-imgbox{
+            max-width: 280px;
+            width: 100%;
+        }
+    }
+    .span__color{
+        display: block;
+        width: 105px;
+        margin-top: 5px;
     }
 }
 
@@ -1145,6 +1207,15 @@
         }
         &__content-text{
             margin-top: 10px;
+            padding: 0 5px;
+        }
+    }
+    .course{
+        &__toggle-title{
+            span{
+                display: block;
+                margin-top: 5px;
+            }
         }
     }
 }
@@ -1180,6 +1251,23 @@
     .copyright{
         span{
             width: 15%;
+        }
+    }
+    .needtoknow{
+        &__inner{
+            grid-gap: 10px;
+        }
+        &__content{
+            max-width: 130px;
+            width: 100%;
+        }
+        &__imgbox-wrapper{
+            max-width: 130px;
+            width: 100%;
+        }
+        &__content-imgbox{
+            max-width: 130px;
+            width: 100%;
         }
     }
 }
