@@ -38,7 +38,21 @@ $(function() {
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        draggable: false
+        draggable: false,
+        responsive: [
+            {
+                breakpoint: 1351,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 901,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
     
     $('.vacancy__slider').slick({
@@ -47,7 +61,21 @@ $(function() {
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        draggable: false
+        draggable: false,
+        responsive: [
+            {
+                breakpoint: 1351,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 901,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     $('.form__select').styler();
