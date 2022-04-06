@@ -864,6 +864,19 @@
     }
 }
 
+.vacancy{
+    &__slider-item--exp,
+    &__slider-item--edu,
+    &__slider-item--age{
+        display: flex;
+        justify-content: space-between;
+    }
+    .dots{
+        width: 100%;
+        border-bottom: 1px dotted #fff;
+    }
+}
+
 .slick-list{
     overflow: hidden;
     display: flex;
@@ -907,6 +920,25 @@
         left: 80%;
         top: 20%;
     }
+    .newsboard,
+    .vacancy{
+        .slick-prev{
+            left: -30px;
+        }
+        .slick-next{
+            right: -15px;
+        }
+        .slick-prev.slick-disabled,
+        .slick-next.slick-disabled{
+            opacity: 1;
+        }
+    }
+    .vacancy{
+        .slick-prev,
+        .slick-next{
+            top: 22%;
+        }
+    }
 }
 
 @media (max-width: 1350px){
@@ -943,6 +975,27 @@
         background-image: none;
         background: linear-gradient(286.41deg, #022335 3.63%, #043A41 90.98%);
     }
+    .newsboard{
+       &__slider{
+           max-width: 800px;
+           margin: 0 auto;
+       }
+       .slick-slide+.slick-slide{
+            margin-left: 20px;
+        }
+        .slick-next {
+            right: 5px;
+        }
+    }
+    .vacancy{
+        &__slider{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .slick-next {
+            right: -10px;
+        }
+    }   
 }
 
 @media(max-width: 1200px){
@@ -967,6 +1020,14 @@
         &__inner{
             background-size: 50%;
             background-position: 113% 35%;
+        }
+    }
+    .course-author{
+        &__inner{
+            align-items: flex-end;
+        }
+        &__info{
+            margin-right: 10px;
         }
     }
 }
@@ -1003,6 +1064,33 @@
            }
         }
     }
+    .newsboard,
+    .vacancy{
+        &__slider{
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .slick-slide+.slick-slide{
+            margin-left: 0px;
+        }
+        .slick-slide{
+            margin: 0 auto;
+        }
+
+    } 
+    .newsboard{
+        .slick-prev {
+            left: -25px;
+        }
+        .slick-next {
+            right: -15px;
+        }
+    }
+    .vacancy{
+        .slick-next {
+            right: -15px;
+        }
+    }
 }
 
 @media (max-width: 768px){
@@ -1010,7 +1098,9 @@
     .intellect,
     .needtoknow,
     .whywe,
-    .courses{
+    .courses,
+    .newsboard,
+    .vacancy{
         padding: 60px 0;
     }
     .title{
@@ -1059,8 +1149,12 @@
     .intellect .title,
     .needtoknow .title,
     .whywe .title,
-    .courses .title {
+    .courses .title,
+    .course-author__info .title {
         margin-bottom: 25px;
+    }
+    .course-author__info .title{
+        margin-top: 0;
     }
     .intellect{
         &__imgbox{
@@ -1098,6 +1192,17 @@
         display: block;
         width: 105px;
         margin-top: 5px;
+    }
+    .course-author{
+        &__data{
+            bottom: 50px;
+        }
+    }
+    .newsboard,
+    .vacancy{
+        &__top{
+            margin-bottom: 25px;
+        }
     }
 }
 
@@ -1218,6 +1323,56 @@
             }
         }
     }
+    .course-author{
+        &__inner{
+            display: block;
+        }
+    }
+    .newsboard,
+    .vacancy{    
+        position: relative;
+        padding-bottom: 120px;  
+        &__slider{
+            max-width: 290px;
+        }
+        &__link{
+            position: absolute;
+            height: 30px;
+            bottom: 60px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+        .slick-list{
+            max-width: 290px;
+            margin: 0 auto;
+        }
+        .slick-slide{
+            max-width: 290px;
+        }
+        .slick-prev,
+        .slick-next{
+            width: 42px;
+            height: 42px;
+        }
+    }
+    .newsboard{
+        .slick-prev{
+            left: -15px;
+            top: 17%;
+        }
+        .slick-next{
+            right: -15px;
+            top: 17%;
+        }
+    }
+    .vacancy{
+        .slick-prev{
+            left: -15px;           
+        }
+        .slick-next{
+            right: -15px;
+        }
+    }
 }
 
 @media (max-width: 400px){
@@ -1270,6 +1425,14 @@
             width: 100%;
         }
     }
+    .course-author{
+        &__data{       
+            bottom: 30px;
+        }
+        &__name{
+            font-size: 18px;
+        }
+    }        
 }
 
 @import 'media';
